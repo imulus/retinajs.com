@@ -7669,6 +7669,7 @@ body {
   background-position: top center;
   background-attachment: fixed;
   background-image: url('http://retinajs.s3.amazonaws.com/images/backgrounds/bg.jpg');
+  background-size: cover;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
   body {
@@ -7820,5 +7821,3 @@ section.intro p {
   font-size: 16px;
   line-height: 27px;
 }
- 
-
