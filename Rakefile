@@ -1,26 +1,54 @@
-require 'coyote/rake'
+task :default => ['assets:compress']
 
-task :default => ['start']
-
-multitask :start => ['server:start','css:watch','js:watch']
+namespace :assets do
+  task :build => ['css:build','js:build']
+  task :compress => ['css:compress','js:compress']
+  multitask :watch => ['css:watch','js:watch']
+end
 
 namespace :css do
-  coyote do |config|
-    config.input    = "assets/stylesheets/app/application.less"
-    config.output   = "public/application.css"
+  input  = "assets/stylesheets/app/application.less"
+  output = "public/application.css"
+
+  task :build do
+    Bundler.with_clean_env do
+      sh "banshee #{input}:#{output}"
+    end
+  end
+
+  task :watch do
+    Bundler.with_clean_env do
+      sh "banshee #{input}:#{output} --watch"
+    end
+  end
+
+  task :compress do
+    Bundler.with_clean_env do
+      sh "banshee #{input}:#{output} --compress"
+    end
   end
 end
 
 namespace :js do
-  coyote do |config|
-    config.input    = "assets/javascripts/app/application.coffee"
-    config.output   = "public/application.js"
-  end
-end
+  input  = "assets/javascripts/app/application.coffee"
+  output = "public/application.js"
 
-namespace :server do
-  task :start do
-    sh 'rackup'
+  task :build do
+    Bundler.with_clean_env do
+      sh "banshee #{input}:#{output}"
+    end
+  end
+
+  task :watch do
+    Bundler.with_clean_env do
+      sh "banshee #{input}:#{output} --watch"
+    end
+  end
+
+  task :compress do
+    Bundler.with_clean_env do
+      sh "banshee #{input}:#{output} --compress"
+    end
   end
 end
 
