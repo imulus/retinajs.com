@@ -23,14 +23,14 @@
       </nav>
     </div>
   </header>
-  
+
   <div class="container">
     <section class="intro">
       <h1>
-        <span>Retina graphics</span> 
+        <span>Retina graphics</span>
         <span class="light">for your website</span>
       </h1>
-      
+
       <p>
         retina.js is an open source script that makes it easy to serve <br />
         high-resolution images to devices with retina displays
@@ -41,7 +41,7 @@
       </p>
     </section>
   </div>
-  
+
 
     <div class="container dark">
       <section id="how-it-works">
@@ -57,15 +57,15 @@
         <p>The script will check your server to see if an alternative image exists at this path:<br />
         <code>&quot;/images/my_image@2x.png&quot;</code>
         </p>
-      </section>    
-      
+      </section>
+
       <section id="how-to-use">
         <h2>How to use</h2>
-        
+
         <h3>JavaScript</h3>
-        
+
         <p>The JavaScript helper script automatically replaces images on your page with high-resolution variants (if they exist). To use it, <a href="#download" class="scroller">download the script</a> and include it at the bottom of your page.</p>
-        
+
         <ol>
           <li>Place the <code>retina.js</code> file on your server</li>
           <li>
@@ -74,15 +74,15 @@
             <code>&lt;script type=&quot;text/javascript&quot; src=&quot;/scripts/retina.js&quot;&gt;&lt;/script&gt;</code>
             <br /><br />
             (put it at the bottom of your template, before your closing <code>&lt;/body&gt;</code> tag)
-          </li>    
+          </li>
           <li>That's it!</li>
         </ol>
-        
-        
-        
-        
+
+
+
+
         <h3>LESS</h3>
-        
+
         <p>The LESS CSS mixin is a helper for applying high-resolution background images in your stylesheet. You provide it with an image path and the dimensions of the original-resolution image. The mixin creates a media query specifically for Retina displays, changes the background image for the selector elements to use the high-resolution (@2x) variant and applies a <code>background-size</code> of the original image in order to maintain proper dimensions. To use it, <a href="#download"  class="scroller">download the mixin</a>, import or include it in your LESS stylesheet, and apply it to elements of your choice.</p>
 
         <h4>Steps:</h4>
@@ -90,26 +90,26 @@
           <strong>Syntax:</strong><br />
           <code>.at2x(@path, [optional] @width: auto, [optional] @height: auto);</code>
         </p>
-        
+
         <h4>Steps:</h4>
-        
+
         <ol>
           <li>Add the <code>.at2x()</code> mixin from <code>retina.less</code> to your LESS stylesheet</li>
           <li>
             In your stylesheet, call the <code>.at2x()</code> mixin anywhere instead of using <code>background-image</code>
-            
+
             <br /><br />
-            
+
 <code class="big">#logo {
   .at2x('/images/my_image.png', 200px, 100px);
 }</code>
-            
+
             <br /><br />
-            
+
             Will compile to:
 
             <br /><br />
-            
+
 <code class="big">#logo {
   background-image: url('/images/my_image.png');
 }
@@ -119,19 +119,19 @@
     background-image: url('/images/my_image@2x.png');
     background-size: 200px 100px;
   }
-}</code>            
+}</code>
 
           </li>
         </ol>
-        
-      </section>      
+
+      </section>
 
 
       <section id="download">
         <h2>Download</h2>
         <p>
-          <a href="https://retinajs.s3.amazonaws.com/downloads/retina.zip" class="btn btn-large btn-primary"><i class="icon-download"></i> Download zip</a>
-          <a href="https://github.com/imulus/retinajs/downloads" class="btn btn-large btn-primary"><i class="icon-download"></i> Download source</a>          
+          <a href="https://github.com/imulus/retinajs/releases/download/v1.1.0/retina-1.1.0.zip" class="btn btn-large btn-primary"><i class="icon-download"></i> Download zip</a>
+          <a href="https://github.com/imulus/retinajs" class="btn btn-large btn-primary"><i class="icon-download"></i> Download source</a>
         </p>
       </section>
 
@@ -143,12 +143,12 @@
           <a href="http://github.com/imulus/retinajs" class="btn btn-large btn-primary">http://github.com/imulus/retinajs &nbsp;<i class="icon-chevron-right"></i></a>
         </p>
       </section>
-      
-      
+
+
       <section>
         <p>Made with love in Boulder, CO by <a href="http://imulus.com" rel="retinajs">imulus</a></p>
         <p>Thanks to <a href="http://www.flickr.com/zachd1_618/">Zach Dischner</a> for the kickass background photo. Check out his work on <a href="http://www.flickr.com/photos/zachd1_618/">Flickr</a>.</p>
-      </section>      
+      </section>
     </div>
 
 
@@ -160,7 +160,7 @@
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script src="/application.js"></script>
-  <script src="/retina.js"></script>  
+  <script src="/retina.js"></script>
 
   <script type="text/javascript">
    var _gaq = _gaq || [];
